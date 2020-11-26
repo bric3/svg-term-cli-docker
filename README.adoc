@@ -19,7 +19,7 @@ although it's certainly possible. The most simple usage would be
 ----
 $ asciinema rec -c "docker build --tag svg-term-cli-docker ." docker-build-rec.json
 
-$ docker run --rm -i svg-term-cli-docker \
+$ docker run --rm -i bric3/svg-term-cli \
   < docker-build-rec.json \
   > docker-build-rec.svg
 ----
@@ -27,9 +27,12 @@ $ docker run --rm -i svg-term-cli-docker \
 Tip for big SVG, it may be useful to tweak node mmeory settings, e.g.
 passing `--memory=5g -e NODE_OPTIONS="--max-old-space-size=4096"`.
 
-== Installation
+== Local build
+
+Use any suitable tag to refer to the image.
 
 [source, shell]
 ----
 $ docker build --tag svg-term-cli-docker .
+$ docker run svg-term-cli-docker
 ----
