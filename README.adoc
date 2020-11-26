@@ -24,6 +24,8 @@ $ docker run --rm -i svg-term-cli-docker \
   > docker-build-rec.svg
 ----
 
+Tip for big SVG, it may be useful to tweak node mmeory settings, e.g.
+passing `--memory=5g -e NODE_OPTIONS="--max-old-space-size=4096"`.
 
 == Installation
 
