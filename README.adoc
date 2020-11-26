@@ -1,0 +1,33 @@
+= Simple docker container for svg-term-cli
+
+https://github.com/marionebl/svg-term-cli[`svg-term`] is
+great to convert an https://asciinema.org/[ascinema] cast 
+to an animated SVG.
+
+image:docker-build-rec.svg[animated parrot]
+
+== Motivation
+
+I didn't want to install NodeJS/npm on my system.
+
+== Usage
+
+Since svg-term runs in a container, I didn't want to use volumes, 
+although it's certainly possible. The most simple usage would be
+
+[source, shell]
+----
+$ asciinema rec -c "docker build --tag svg-term-cli-docker ." docker-build-rec.json
+
+$ docker run --rm -i svg-term-cli-docker \
+  < docker-build-rec.json \
+  > docker-build-rec.svg
+----
+
+
+== Installation
+
+[source, shell]
+----
+$ docker build --tag svg-term-cli-docker .
+----
